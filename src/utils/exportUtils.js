@@ -21,7 +21,7 @@ export function exportToCsv(filename, rows) {
     })
   ].join('\n');
 
-  const blob = new Blob(["\uFEFF" + csvContent], { type: 'text/csv;charset=utf-8;' });
+  const blob = new Blob(["\uFEFFsep=" + separator + "\n" + csvContent], { type: 'text/csv;charset=utf-8;' });
   const link = document.createElement("a");
   if (link.download !== undefined) {
     const url = URL.createObjectURL(blob);
